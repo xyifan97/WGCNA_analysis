@@ -115,27 +115,6 @@ plotDendroAndColors(net$dendrograms[[1]], mergedColors[net$blockGenes[[1]]],
 
 
 
-#=====================================================================================
-#
-#  Code chunk 4
-#
-#=====================================================================================
-# Turn adjacency into topological overlap
-TOM = TOMsimilarity(adjacency);
-dissTOM = 1-TOM
-#=====================================================================================
-#
-#  Code chunk 5
-#
-#=====================================================================================
-# Call the hierarchical clustering function
-geneTree = hclust(as.dist(dissTOM), method = "average");
-# Plot the resulting clustering tree (dendrogram)
-sizeGrWindow(12,9)
-plot(geneTree, xlab="", sub="", main = "Gene clustering on TOM-based dissimilarity",
-     labels = FALSE, hang = 0.04);
-
-
 
 
 
